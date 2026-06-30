@@ -67,12 +67,23 @@ def monitor():
 @app.command()
 def logs():
     """
-    View logs
+    View firewall logs
     """
 
-    console.print(
-        "[blue]Logging system coming soon...[/blue]"
-    )
+    try:
+
+        with open("logs/firewall.log","r") as file:
+
+            console.print(
+                file.read()
+            )
+
+
+    except FileNotFoundError:
+
+        console.print(
+            "[yellow]No logs available[/yellow]"
+        )
 
 
 @app.command()
