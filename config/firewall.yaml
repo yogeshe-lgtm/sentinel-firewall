@@ -1,0 +1,21 @@
+firewall:
+  name: Sentinel Firewall
+  version: 1.0
+
+monitor:
+  interface: any
+  packet_limit: 0
+
+logging:
+  level: INFO
+  file: logs/firewall.log
+
+detection:
+  port_scan_threshold: 50
+  packet_flood_threshold: 500
+
+dashboard:
+  refresh_rate: 1
+
+rules:
+  default_action: ALLOW

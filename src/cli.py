@@ -5,7 +5,7 @@ Sentinel Firewall CLI Module
 import typer
 from rich.console import Console
 from config import FIREWALL_NAME, VERSION
-
+from config_loader import load_config
 
 app = typer.Typer(
     help="Sentinel Firewall - Intelligent Linux Firewall"
@@ -106,3 +106,12 @@ def stats():
     console.print(
         "[magenta]Statistics module coming soon...[/magenta]"
     )
+@app.command()
+def config():
+    """
+    Display current firewall configuration.
+    """
+
+    config = load_config()
+
+    console.print(config)
