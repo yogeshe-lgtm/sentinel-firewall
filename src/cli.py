@@ -1,11 +1,13 @@
+
 """
 Sentinel Firewall CLI Module
 """
-
+from report import generate_report
 import typer
 from rich.console import Console
 from config import FIREWALL_NAME, VERSION
 from config_loader import load_config
+from report import generate_report,generate_summary
 
 app = typer.Typer(
     help="Sentinel Firewall - Intelligent Linux Firewall"
@@ -115,3 +117,17 @@ def config():
     config = load_config()
 
     console.print(config)
+@app.command()
+def report():
+    """
+    Generate firewall report
+    """
+
+    generate_report()
+@app.command()
+def summary():
+    """
+    Display firewall summary
+    """
+
+    generate_summary()

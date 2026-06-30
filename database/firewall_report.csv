@@ -1,0 +1,2 @@
+timestamp,source_ip,destination_ip,protocol,destination_port,action,threat
+2026-06-30 13:12:17,192.168.1.10,8.8.8.8,TCP,443,ALLOW,None
