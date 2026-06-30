@@ -1,0 +1,16 @@
+{
+    "default_policy": "ALLOW",
+
+    "rules": [
+
+        {
+            "id": 1,
+            "name": "Block SSH",
+            "priority": 1,
+            "action": "BLOCK",
+            "protocol": "TCP",
+            "port": 22
+        }
+
+    ]
+}
