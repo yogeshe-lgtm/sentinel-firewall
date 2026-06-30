@@ -60,9 +60,9 @@ def monitor():
     Monitor network traffic
     """
 
-    console.print(
-        "[yellow]Traffic monitoring module coming soon...[/yellow]"
-    )
+    from monitor import start_monitor
+
+    start_monitor()
 
 
 @app.command()
