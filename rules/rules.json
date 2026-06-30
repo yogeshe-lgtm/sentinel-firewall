@@ -1,16 +1,20 @@
-{
-    "default_policy": "ALLOW",
-
-    "rules": [
-
-        {
-            "id": 1,
-            "name": "Block SSH",
-            "priority": 1,
-            "action": "BLOCK",
-            "protocol": "TCP",
-            "port": 22
-        }
-
-    ]
-}
+[
+    {
+        "id": 1,
+        "name": "Block SSH",
+        "enabled": true,
+        "priority": 100,
+        "protocol": "TCP",
+        "port": 22,
+        "action": "BLOCK"
+    },
+    {
+        "id": 2,
+        "name": "Allow HTTPS",
+        "enabled": true,
+        "priority": 90,
+        "protocol": "TCP",
+        "port": 443,
+        "action": "ALLOW"
+    }
+]
