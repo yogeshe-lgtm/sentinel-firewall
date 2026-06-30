@@ -1,55 +1,71 @@
 # Sentinel Firewall
 
-## Intelligent Python-Based Personal Firewall for Kali Linux
+A Python-based intelligent personal firewall for Kali Linux that monitors live network traffic, analyzes packets, detects suspicious activity, and logs security events.
 
-Sentinel Firewall is a cybersecurity project that aims to build a lightweight, intelligent, and configurable personal firewall using Python.
+## Features
 
-The firewall monitors network traffic, applies security rules, detects suspicious activities, and provides detailed security logs through a clean CLI interface.
+- Live packet monitoring
+- Rule-based packet filtering
+- Port scan detection
+- Packet flood detection
+- SQLite event logging
+- YAML configuration
+- Rich CLI dashboard
+- CSV report generation
+- JSON rule management
 
----
+## Technologies Used
 
-# Features
-
-## Current Development
-
-- Project architecture setup
-- CLI framework
-- Packet monitoring
-- Rule-based filtering
-- Traffic logging
-
-## Planned Features
-
-- IP blocking
-- Port filtering
-- Protocol filtering
-- Real-time traffic monitoring
-- Threat detection
-- Automatic IP blocking
-- SQLite logging
-- Security dashboard
-
----
-
-# Technologies
-
-- Python
-- Linux Networking
-- Netfilter
+- Python 3.13
 - Scapy
-- SQLite
-- Rich CLI
+- Typer
+- Rich
+- SQLite3
+- PyYAML
+- Pandas
 
----
+## Installation
 
-# Project Status
+```bash
+git clone <repository-url>
+cd sentinel-firewall
 
-🚧 Under Development
+python3 -m venv .venv
+source .venv/bin/activate
 
-Version: 0.1.0
+pip install -r requirements.txt
+```
 
----
+## Run
 
-# Author
+```bash
+python3 src/main.py monitor
+```
 
-Yogesh E
+## Available Commands
+
+```bash
+python3 src/main.py start
+python3 src/main.py monitor
+python3 src/main.py status
+python3 src/main.py logs
+python3 src/main.py config
+python3 src/main.py report
+python3 src/main.py summary
+```
+
+## Project Structure
+
+```
+config/
+database/
+docs/
+logs/
+rules/
+src/
+tests/
+```
+
+## License
+
+MIT License
