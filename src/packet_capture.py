@@ -1,41 +1,64 @@
 """
 Sentinel Firewall
 Packet Capture Module
-
-Responsible for capturing and analyzing network packets.
 """
 
 from scapy.all import sniff
 
+from packet_analyzer import analyze_packet
+from statistics import TrafficStatistics
 
-packet_count = 0
+
+stats = TrafficStatistics()
 
 
-def analyze_packet(packet):
-    """
-    Analyze captured packets
-    """
+def process_packet(packet):
 
-    global packet_count
+    info = analyze_packet(packet)
 
-    packet_count += 1
+    stats.update(info)
 
-    print("\n----------------------------")
-    print(f"Packet Number: {packet_count}")
 
-    print(packet.summary())
+    print("\n--------------------------------")
 
-    print("----------------------------")
+    print(
+        f"Time        : {info['time']}"
+    )
+
+    print(
+        f"Source      : {info['source']}"
+    )
+
+    print(
+        f"Destination : {info['destination']}"
+    )
+
+    print(
+        f"Protocol    : {info['protocol']}"
+    )
+
+
+    if info["source_port"]:
+
+        print(
+            f"Ports       : {info['source_port']} → {info['destination_port']}"
+        )
+
+
+    print(
+        f"Size        : {info['size']} bytes"
+    )
+
 
 
 def start_capture():
-    """
-    Start live packet capture
-    """
 
-    print("Starting packet capture...")
+    print(
+        "Starting Sentinel Firewall packet monitoring..."
+    )
+
 
     sniff(
-        prn=analyze_packet,
+        prn=process_packet,
         store=False
     )
