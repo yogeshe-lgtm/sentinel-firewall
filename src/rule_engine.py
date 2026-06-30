@@ -7,7 +7,7 @@ allow/block decisions.
 """
 
 
-from .rules_manager import load_rules
+from rules_manager import load_rules
 
 
 

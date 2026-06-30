@@ -4,7 +4,6 @@ Sentinel Firewall CLI Module
 
 import typer
 from rich.console import Console
-
 from config import FIREWALL_NAME, VERSION
 
 

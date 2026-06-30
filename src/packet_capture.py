@@ -4,17 +4,18 @@ Packet Capture Module
 """
 
 from scapy.all import sniff
-
+from firewall import Firewall
 from packet_analyzer import analyze_packet
 from statistics import TrafficStatistics
 
 
 stats = TrafficStatistics()
-
+firewall = Firewall()
 
 def process_packet(packet):
 
     info = analyze_packet(packet)
+    firewall.process_packet(info)
 
     stats.update(info)
 
