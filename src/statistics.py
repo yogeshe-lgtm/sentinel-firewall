@@ -46,3 +46,13 @@ class TrafficStatistics:
             "udp": self.udp,
             "icmp": self.icmp,
         }
+
+    def reset(self):
+
+        self.total = 0
+        self.allowed = 0
+        self.blocked = 0
+
+        self.tcp = 0
+        self.udp = 0
+        self.icmp = 0
